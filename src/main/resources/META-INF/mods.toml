@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[31,)"
+issueTrackerURL=""
+license="All rights reserved"
+
+[[mods]]
+    modId="pokecube_pokeplayer"
+    version="${file.jarVersion}"
+    displayName="Pokécube Syncro Machine"
+    authors="Nelk, Thutmose"
+    description='''
+    Example of an addon development environment for pokecube
+    '''
+    
+[[dependencies.pokecube_pokeplayer]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="version_mc"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.pokecube_pokeplayer]]
+    modId="pokecube"
+    mandatory=true
+    versionRange="version_pokecube"
+    ordering="NONE"
+    side="BOTH"

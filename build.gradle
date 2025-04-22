@@ -1,0 +1,122 @@
+buildscript {
+    repositories {
+        maven { url = 'https://files.minecraftforge.net/maven' }
+        jcenter()
+        mavenCentral()
+        flatDir {
+          dirs 'libs'
+        }
+        maven {url='https://repo.spongepowered.org/repository/maven-public/'}
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.+', changing: true
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
+    }
+}
+
+plugins {
+  id 'org.ajoberstar.grgit' version '2.3.0'
+}
+
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'eclipse'
+apply plugin: 'maven-publish'
+apply plugin: 'org.spongepowered.mixin'
+
+ext {
+    VERSION_COMPILE = "${version_compile}"
+    // Force a refresh of the toml file
+    cleanTOML()
+}
+
+version = "${version_minecraft}-${VERSION_COMPILE}"
+group = '${compile_group}'
+archivesBaseName = "${compile_name}"
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+minecraft {
+    mappings channel: "${channel_mappings}", version: "${version_mappings}"
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+    
+    runs {
+        client = {
+            // recommended logging level for the console
+            properties 'forge.logging.console.level': 'debug'
+            properties '-XX': '+UnlockCommercialFeatures'
+            properties '-XX': '+FlightRecorder'
+            properties 'forge.logging.console.level': 'debug'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
+            workingDirectory project.file('run').canonicalPath
+            source sourceSets.main
+        }
+        server = {
+            // recommended logging level for the console
+            properties 'forge.logging.console.level': 'debug'
+            properties '-XX': '+UnlockCommercialFeatures'
+            properties '-XX': '+FlightRecorder'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
+            workingDirectory project.file('run').canonicalPath
+            source sourceSets.main
+        }
+        data = {
+            workingDirectory project.file('run').canonicalPath
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property 'forge.logging.console.level', 'debug'
+            args '--mod', '${mod_id}', '--all', '--output', file('src/generated/resources/'), '--existing', sourceSets.main.resources.srcDirs[0]
+            source sourceSets.main
+        }
+    }
+}
+
+repositories {
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${version_minecraft}-${version_forge}"
+
+    // Here we import the version of pokecube to use.
+    implementation fg.deobf("curse.maven:pokecube-aio-${version_pokecube}")
+}
+
+// Example for how to get properties into the manifest for reading by the runtime..
+jar {
+    manifest {
+        attributes([
+            "FMLAT": "accesstransformer.cfg",
+            "Specification-Title": "${compile_name}",
+            "Specification-Vendor": "${author_name}",
+            "Specification-Version": VERSION_COMPILE,
+            "Implementation-Title": project.name,
+            "Implementation-Version": VERSION_COMPILE,
+            "Implementation-Vendor" :"${author_name}",
+            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+}
+
+processResources.doLast {
+    def TOMLFILE = "./build/resources/main/META-INF/mods.toml"
+    replaceParameters(TOMLFILE, "version_pc", "${version_pcsupport}")
+    replaceParameters(TOMLFILE, "version_mc", "${version_mcsupport}")
+}
+
+def replaceParameters(filename, find, replace) {
+    ant.replace(file:filename,token:find,value:replace)
+}
+
+def cleanTOML()
+{
+    delete "./build/resources/main/META-INF/mods.toml" 
+}
