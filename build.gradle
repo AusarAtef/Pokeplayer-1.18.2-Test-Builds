@@ -86,8 +86,8 @@ repositories {
 dependencies {
     minecraft "net.minecraftforge:forge:${version_minecraft}-${version_forge}"
     
-    // Direct link to required deobf
-    implementation files ('https://github.com/Pokecube-Development/Pokecube-Issues-and-Wiki/releases/download/1.18.2-3.24.0.a/pokecube-aio-1.18.2-3.24.0.a-deobf.jar')
+    // Link directly to required deobf
+    implementation name: 'pokecube-aio-1.18.2-3.24.0.a-deobf'
     
     // Here we import the version of pokecube to use.
     // implementation fg.deobf("curse.maven:pokecube-aio-${version_pokecube}")
