@@ -1,4 +1,6 @@
+
 name: Build PokePlayer Project
+
 
 on:
   push:
@@ -8,14 +10,17 @@ on:
     branches:
       - main
 
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
 
     steps:
       # Step 1: Check out the repository
       - name: Checkout code
         uses: actions/checkout@v3
+
 
       # Step 2: Set up JDK (Java Development Kit)
       - name: Set up JDK 17
@@ -23,6 +28,7 @@ jobs:
         with:
           distribution: 'temurin' # Use Temurin (OpenJDK)
           java-version: '17'     # Use Java 17 (required for Minecraft 1.18.2)
+
 
       # Step 3: Cache Gradle Dependencies
       - name: Cache Gradle dependencies
@@ -33,13 +39,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      # Step 4: Build the project with Gradle
-      - name: Build with Gradle
-        run: ./gradlew build
 
-      # Step 5: Upload Build Artifacts
+      # Step 4: Build the project with Gradle
+Step 5: Upload Build Artifacts
       - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v3.1.2
+        uses: actions/upload-artifact@v4.6.2
         with:
           name: build-artifacts
           path: build/libs/*.jar
