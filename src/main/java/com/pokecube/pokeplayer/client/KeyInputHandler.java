@@ -15,13 +15,14 @@ import pokecube.api.entity.pokemob.IPokemob;
 import pokecube.api.moves.MoveEntry;
 import pokecube.core.PokecubeCore;
 import pokecube.core.moves.MovesUtils;
+import pokecube.core.utils.Vector3;
 
 import java.util.Map;
 
 //@Mod.EventBusSubscriber(modid = "pokeplayer_machine", value = Dist.CLIENT)
 public class KeyInputHandler {
     private static int selectedMove = 0;
-    private static final int MAX_MOVES = 4; // Defined locally for 4 move slots, per Pokémon standard
+    private static final int MAX_MOVES = 4;
     static Map<String, String> guistate = MachineSlotMenu.guistate;
 
     public static void handleKeyPress(int key) {
@@ -50,11 +51,13 @@ public class KeyInputHandler {
                 PokecubeAPI.LOGGER.info("Executando movimento: " + moveName);
                 IPokemob pokemob = PokePlayerDataHandler.getInstance().getPokemobForPlayer(player);
 
-                Vec3d start = player.position(); // Use Vec3d for player position
+                Vec3d start = player.position();
                 Vec3d end = findTarget();
 
                 if (end != null) {
-                    MovesUtils.useMove(move, pokemob.getEntity(), end, start, end); // Assume Vec3d support
+                    Vector3 pokeStart = new Vector3().set(start.x, start.y, start.z);
+                    Vector3 pokeEnd = new Vector3().set(end.x, end.y, end.z);
+                    MovesUtils.useMove(move, pokemob.getEntity(), pokeEnd, pokeStart, pokeEnd);
                     PokecubeAPI.LOGGER.info("Executando movimento: " + moveName + " pelo Pokémob " + pokemob.getPokedexEntry().getName());
                 } else {
                     System.out.println("Nenhum alvo válido encontrado para o movimento.");
@@ -77,7 +80,7 @@ public class KeyInputHandler {
         if (result.getType() == HitResult.Type.ENTITY) {
             EntityHitResult entityResult = (EntityHitResult) result;
             if (entityResult.getEntity() instanceof LivingEntity) {
-                return entityResult.getEntity().position(); // Use Vec3d directly
+                return entityResult.getEntity().position();
             }
         }
         return null;
