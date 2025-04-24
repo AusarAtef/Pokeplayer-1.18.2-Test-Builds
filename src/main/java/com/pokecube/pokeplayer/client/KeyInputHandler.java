@@ -17,7 +17,7 @@ import pokecube.core.PokecubeCore;
 import pokecube.core.moves.MovesUtils;
 
 import thut.api.maths;
-import thut.api.maths.vecmaths;
+import pokecube.gimmicks.zmoves;
 
 import java.util.Map;
 
