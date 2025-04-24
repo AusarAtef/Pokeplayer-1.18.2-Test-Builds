@@ -16,6 +16,9 @@ import pokecube.api.moves.MoveEntry;
 import pokecube.core.PokecubeCore;
 import pokecube.core.moves.MovesUtils;
 
+import thut.api.maths;
+import thut.api.maths.vecmaths;
+
 import java.util.Map;
 
 //@Mod.EventBusSubscriber(modid = "pokecube_expansion", value = Dist.CLIENT)
