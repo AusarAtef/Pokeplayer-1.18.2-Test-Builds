@@ -1,11 +1,11 @@
 buildscript {
     repositories {
-        maven { url = 'https://files.minecraftforge.net/' }
+        maven { url = 'https://files.minecraftforge.net/maven' }
         jcenter()
         mavenCentral()
-        //flatDir {
-          //dirs 'libs'
-        //}
+        flatDir {
+          dirs 'libs'
+        }
         maven {url='https://repo.spongepowered.org/repository/maven-public/'}
     }
     dependencies {
@@ -78,9 +78,9 @@ repositories {
             includeGroup "curse.maven"
         }
     }
-    //flatDir {
-        //dirs 'libs'
-    //}
+    flatDir {
+        dirs 'libs'
+    }
 }
 
 dependencies {
