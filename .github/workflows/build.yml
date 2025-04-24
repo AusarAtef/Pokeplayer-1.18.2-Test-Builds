@@ -1,4 +1,4 @@
-name: Build PokePlayer Mod
+0name: Build PokePlayer Mod
 
 on:
   push:
@@ -48,4 +48,8 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: pokeplayer-mod
-        path: .github/*.jar
+        path: build/libs/*.jar
+
+				# Debug check
+				name: Debug build directory
+       run: ls -R build
