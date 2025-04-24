@@ -50,4 +50,4 @@ jobs:
 
     # Step 5: Run the Gradle build
     - name: Build the mod
-      run: ./gradlew build
+      run: ./gradlew clean build --refresh-dependencies --stacktrace
