@@ -1,0 +1,45 @@
+name: Build PokePlayer Mod
+
+on:
+  push:
+    branches:
+      - codespace-super-couscous-764wj5rwj6crxrr
+  pull_request:
+    branches:
+      - codespace-super-couscous-764wj5rwj6crxrr
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Check out the repository
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Step 2: Set up JDK 17
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    # Step 3: Cache Gradle dependencies
+    - name: Cache Gradle dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.gradle/caches
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-
+
+    # Step 4: Run the Gradle build
+    - name: Build the mod
+      run: ./gradlew build
+
+    # Step 5: Upload the built JAR as an artifact
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: pokeplayer-mod
+        path: build/libs/*.jar
