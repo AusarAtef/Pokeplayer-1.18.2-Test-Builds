@@ -1,53 +1,71 @@
-name: Build PokePlayer Mod
+name: Build Pokecube Pokeplayer Mod
 
 on:
   push:
-    branches:
-      - codespace-super-couscous-764wj5rwj6crxrr
+    branches: [ main ]
   pull_request:
-    branches:
-      - codespace-super-couscous-764wj5rwj6crxrr
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
 
     steps:
-    # Step 1: Checkout the main repository
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      # Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-    # Step 2: Sparse checkout of specific folders from Pokecube-Issues-and-Wiki repository
-    - name: Sparse checkout Pokecube-Issues-and-Wiki repository
-      run: |
-        git init Pokecube-Issues-and-Wiki
-        cd Pokecube-Issues-and-Wiki
-        git remote add origin https://github.com/Pokecube-Development/Pokecube-Issues-and-Wiki.git
-        git config core.sparseCheckout true
-        echo "src/" >> .git/info/sparse-checkout
-        echo "ThutCore/" >> .git/info/sparse-checkout
-        git fetch --depth 1 origin 1.18.2
-        git checkout 1.18.2
+      # Set up JDK 17 (required for Minecraft 1.18.2)
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
 
-    # Step 3: Set up Java Development Kit (JDK 17)
-    - name: Set up JDK 17
-      uses: actions/setup-java@v3
-      with:
-        java-version: '17'
-        distribution: 'temurin'
+      # Cache Gradle dependencies to speed up builds, but allow refresh
+      - name: Cache Gradle
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle', '**/gradle-wrapper.properties') }}
+          restore-keys: gradle-${{ runner.os }}-
 
-    # Step 4: Cache Gradle dependencies
-    - name: Cache Gradle dependencies
-      uses: actions/cache@v3
-      with:
-        path: ~/.gradle/caches
-        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-        restore-keys: |
-          ${{ runner.os }}-gradle-
+      # Make gradlew executable
+      - name: Make Gradle Wrapper Executable
+        run: chmod +x ./gradlew
 
-    # Step 5: Run the Gradle build
-    - name: Build the mod
-      run: ./gradlew clean build --refresh-dependencies --stacktrace
+      # Test Maven repository connectivity
+      - name: Test Maven Repositories
+        run: |
+          echo "Testing Forge Maven..."
+          curl -I https://files.minecraftforge.net/maven
+          echo "Testing CurseMaven..."
+          curl -I https://cursemaven.com
+          echo "Testing Maven Central..."
+          curl -I https://repo1.maven.org/maven2
+
+      # Clean and build with Gradle, forcing dependency refresh
+      - name: Build with Gradle
+        run: ./gradlew clean build --refresh-dependencies --stacktrace --info
+
+      # Upload the built JAR as an artifact (even if build fails)
+      - name: Upload Mod JAR
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: mod-jar
+          path: build/libs/*.jar
+          if-no-files-found: ignore
+
+      # Upload Gradle logs for debugging
+      - name: Upload Gradle Logs
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: gradle-logs
+          path: |
+            build/reports/
+            ~/.gradle/
+          if-no-files-found: warn
