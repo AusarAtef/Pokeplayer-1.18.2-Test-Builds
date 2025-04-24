@@ -43,13 +43,6 @@ jobs:
     - name: Build the mod
       run: ./gradlew build
 
-    # Step 6: Upload the built JAR artifact
-    - name: Upload artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: pokeplayer-mod
-        path: build/libs/*.jar
-
 				# Debug check
 				name: Debug build directory
        run: ls -R build
