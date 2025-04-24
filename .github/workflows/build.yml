@@ -17,9 +17,17 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # Step 2: Clone the required Pokecube-Issues-and-Wiki repository (branch 1.18.2)
-    - name: Clone Pokecube-Issues-and-Wiki repository
-      run: git clone --branch 1.18.2 https://github.com/Pokecube-Development/Pokecube-Issues-and-Wiki.git
+    # Step 2: Sparse checkout of specific folders from Pokecube-Issues-and-Wiki repository
+    - name: Sparse checkout Pokecube-Issues-and-Wiki repository
+      run: |
+        git init Pokecube-Issues-and-Wiki
+        cd Pokecube-Issues-and-Wiki
+        git remote add origin https://github.com/Pokecube-Development/Pokecube-Issues-and-Wiki.git
+        git config core.sparseCheckout true
+        echo "src/" >> .git/info/sparse-checkout
+        echo "ThutCore/" >> .git/info/sparse-checkout
+        git fetch --depth 1 origin 1.18.2
+        git checkout 1.18.2
 
     # Step 3: Set up Java Development Kit (JDK 17)
     - name: Set up JDK 17
