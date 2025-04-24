@@ -3,14 +3,17 @@ name: Build PokePlayer Mod
 on:
   push:
     branches:
-      - main
+      - codespace-super-couscous-764wj5rwj6crxrr
   pull_request:
     branches:
-      - main
+      - codespace-super-couscous-764wj5rwj6crxrr
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
 
     steps:
     # Step 1: Checkout the main repository
