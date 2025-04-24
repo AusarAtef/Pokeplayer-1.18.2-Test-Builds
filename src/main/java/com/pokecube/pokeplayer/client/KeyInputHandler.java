@@ -9,54 +9,52 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
-import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.Vec3d;
 import pokecube.api.PokecubeAPI;
 import pokecube.api.entity.pokemob.IPokemob;
 import pokecube.api.moves.MoveEntry;
 import pokecube.core.PokecubeCore;
 import pokecube.core.moves.MovesUtils;
 
-import thut.api.maths;
-import pokecube.gimmicks.zmoves;
-
 import java.util.Map;
 
-//@Mod.EventBusSubscriber(modid = "pokecube_expansion", value = Dist.CLIENT)
+//@Mod.EventBusSubscriber(modid = "pokeplayer_machine", value = Dist.CLIENT)
 public class KeyInputHandler {
     private static int selectedMove = 0;
+    private static final int MAX_MOVES = 4; // Defined locally for 4 move slots, per Pokémon standard
     static Map<String, String> guistate = MachineSlotMenu.guistate;
 
-    public static void handleKeyPress(int key){
+    public static void handleKeyPress(int key) {
         Minecraft mc = Minecraft.getInstance();
-        if(mc.player == null) return;
+        if (mc.player == null) return;
 
-        switch (key){
+        switch (key) {
             case 0 -> changeMove(1);
             case 1 -> changeMove(-1);
             case 2 -> useSelectedMove();
         }
     }
 
-    public static void changeMove(int direction){
+    public static void changeMove(int direction) {
         selectedMove = (selectedMove + direction + MAX_MOVES) % MAX_MOVES;
         System.out.println("Movimento selecionado: " + guistate.get("move_" + selectedMove));
     }
 
     private static void useSelectedMove() {
         Player player = Minecraft.getInstance().player;
-        if(guistate.containsKey("move_" + selectedMove)) {
-            String moveName = (String) guistate.get("move_" + selectedMove);
+        if (guistate.containsKey("move_" + selectedMove)) {
+            String moveName = guistate.get("move_" + selectedMove);
             MoveEntry move = MovesUtils.getMove(moveName);
 
             if (move != null) {
                 PokecubeAPI.LOGGER.info("Executando movimento: " + moveName);
                 IPokemob pokemob = PokePlayerDataHandler.getInstance().getPokemobForPlayer(player);
 
-                Vector3 start = new Vector3().set(player.position());
-                Vector3 end = findTarget();
+                Vec3d start = player.position(); // Use Vec3d for player position
+                Vec3d end = findTarget();
 
-                if(end != null){
-                    MovesUtils.useMove(move, pokemob.getEntity(), end, start, end);
+                if (end != null) {
+                    MovesUtils.useMove(move, pokemob.getEntity(), end, start, end); // Assume Vec3d support
                     PokecubeAPI.LOGGER.info("Executando movimento: " + moveName + " pelo Pokémob " + pokemob.getPokedexEntry().getName());
                 } else {
                     System.out.println("Nenhum alvo válido encontrado para o movimento.");
@@ -65,7 +63,7 @@ public class KeyInputHandler {
         }
     }
 
-    private static Vector3 findTarget() {
+    private static Vec3d findTarget() {
         Player player = Minecraft.getInstance().player;
         ClipContext context = new ClipContext(
                 player.getEyePosition(1.0F),
@@ -79,7 +77,7 @@ public class KeyInputHandler {
         if (result.getType() == HitResult.Type.ENTITY) {
             EntityHitResult entityResult = (EntityHitResult) result;
             if (entityResult.getEntity() instanceof LivingEntity) {
-                return new Vector3().set(entityResult.getEntity());
+                return entityResult.getEntity().position(); // Use Vec3d directly
             }
         }
         return null;
