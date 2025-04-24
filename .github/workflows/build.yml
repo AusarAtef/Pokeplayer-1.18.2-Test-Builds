@@ -1,4 +1,4 @@
-0name: Build PokePlayer Mod
+name: Build PokePlayer Mod
 
 on:
   push:
@@ -41,8 +41,8 @@ jobs:
 
     # Step 5: Build the mod
     - name: Build the mod
-      run: ./gradlew build
+      run: ./gradlew build --stacktrace --info
 
-				# Debug check
-				name: Debug build directory
-       run: ls -R build
+    # Step 6: Debug build directory
+    - name: Debug build directory
+      run: ls -R build
