@@ -32,7 +32,7 @@ ext {
 
 version = "${version_minecraft}-${VERSION_COMPILE}"
 group = 'pokeplayer'
-archivesBaseName = "Pokecube Synchro Machine"
+archivesBaseName = "Pokeplayer"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
