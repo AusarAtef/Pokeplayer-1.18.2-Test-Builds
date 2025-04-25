@@ -42,31 +42,36 @@ public class KeyInputHandler {
     }
 
     private static void useSelectedMove() {
-	    Player player = Minecraft.getInstance().player;
-	    if (guistate.containsKey("move_" + selectedMove)) {
-	        String moveName = guistate.get("move_" + 	selectedMove);
-	        MoveEntry move = MovesUtils.getMove(moveName);
-	
-	        if (move != null) {
-	            PokecubeAPI.LOGGER.info("Executing move: " + 	moveName);
-	            IPokemob pokemob = PokePlayerDataHandler.	getInstance().getPokemobForPlayer(player);
-	
-	            Vector3 start = new Vector3().set(player.	position());
-	            Vector3 end = findTarget(); // Get the target 	position (Vector3)
-	
-	            if (end != null) {
-	                // Find the closest LivingEntity to the 	end position
-	                LivingEntity targetEntity = 	findClosestEntity(end, player.level);
-	                
-	                // Use the move, passing the entity as 	target if one exists
-	                MovesUtils.useMove(move, pokemob.	getEntity(), targetEntity, start, end);
-	                PokecubeAPI.LOGGER.info("Move executed: " 	+ moveName + " by Pokemob " + pokemob.getPokedexEntry().	getName());
-	            } else {
-	                System.out.println("No valid target found 	for the move.");
-	            }
-	        }
-	    }
-	}
+    Player player = Minecraft.getInstance().player;
+    if (guistate.containsKey("move_" + selectedMove)) {
+        String moveName = guistate.get("move_" + selectedMove);
+        MoveEntry move = MovesUtils.getMove(moveName);
+
+        if (move != null) {
+            PokecubeAPI.LOGGER.info("Executing move: " + moveName);
+            IPokemob pokemob = PokePlayerDataHandler.getInstance().getPokemobForPlayer(player);
+
+            Vector3 start = new Vector3().set(player.position());
+            Vector3 end = findTarget(); // Get the target position (Vector3)
+
+            if (end != null) {
+                // Find the closest LivingEntity to the end position
+                LivingEntity targetEntity = findClosestEntity(end, player.level);
+
+                // Use the move, handling both entity targeting and positional effects
+                if (targetEntity != null) {
+                    MovesUtils.useMove(move, pokemob.getEntity(), targetEntity, start, end);
+                    PokecubeAPI.LOGGER.info("Move executed: " + moveName + " targeting entity " + targetEntity.getName().getString());
+                } else {
+                    System.out.println("No target entity found. Applying positional effects.");
+                    MovesUtils.useMove(move, pokemob.getEntity(), null, start, end);
+                }
+            } else {
+                System.out.println("No valid target found for the move.");
+            }
+        }
+    }
+}
 
     private static Vector3 findTarget() {
         Player player = Minecraft.getInstance().player;
