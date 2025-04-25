@@ -1,8 +1,7 @@
 name: Build Pokeplayer Project
 
 on:
-  workflows_dispatchon:
-    - main
+  workflow_dispatch
 
 jobs:
   build:
