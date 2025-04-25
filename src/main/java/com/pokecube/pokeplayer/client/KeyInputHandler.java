@@ -15,7 +15,7 @@ import pokecube.api.entity.pokemob.IPokemob;
 import pokecube.api.moves.MoveEntry;
 import pokecube.core.PokecubeCore;
 import pokecube.core.moves.MovesUtils;
-import thut.api.maths;
+import thut.api.maths.Vector3;
 
 import java.util.Map;
 
