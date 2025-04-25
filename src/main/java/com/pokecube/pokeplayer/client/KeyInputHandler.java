@@ -15,10 +15,11 @@ import pokecube.api.entity.pokemob.IPokemob;
 import pokecube.api.moves.MoveEntry;
 import pokecube.core.PokecubeCore;
 import pokecube.core.moves.MovesUtils;
+import thut.api.maths;
 
 import java.util.Map;
 
-@Mod.EventBusSubscriber(modid = "pokecube_expansion", value = Dist.CLIENT)
+// @Mod.EventBusSubscriber(modid = "pokecube_expansion", value = Dist.CLIENT)
 public class KeyInputHandler {
     private static int selectedMove = 0;
     private static final int MAX_MOVES = 4;
