@@ -25,6 +25,16 @@ public class KeyInputHandler {
     private static final int MAX_MOVES = 4;
     static Map<String, String> guistate = MachineSlotMenu.guistate;
 
+private static LivingEntity findClosestEntity(Vector3 position, Level level) {
+    // Define a bounding box around the given position to find nearby entities
+    AABB searchArea = position.getAABB().inflate(1.0); // 1-block radius, adjust as needed
+    // Get all LivingEntity instances within the bounding box
+    List<LivingEntity> entities = level.getEntitiesOfClass(LivingEntity.class, searchArea);
+
+    // Return the first entity found, or null if no entities were found
+    return entities.isEmpty() ? null : entities.get(0);
+}
+
     public static void handleKeyPress(int key){
         Minecraft mc = Minecraft.getInstance();
         if(mc.player == null) return;
