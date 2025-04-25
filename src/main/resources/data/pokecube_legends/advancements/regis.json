@@ -1,0 +1,45 @@
+{
+  "display": {
+    "icon": {
+      "item": "pokecube_legends:rockcore"
+    },
+    "title": {
+      "translate": "achievement.pokelegends.regis",
+      "color": "blue",
+      "bold": false,
+      "italic": false,
+      "underlined": false,
+      "strikethrough": false,
+      "obfuscated": false
+    },
+    "description": {
+      "translate": "achievement.pokelegends.regis.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "catch_relicanth": {
+      "trigger": "pokecube:catch",
+      "conditions": {
+        "lenient": true,
+        "entry": "relicanth"
+      }
+    },
+    "catch_wailord": {
+      "trigger": "pokecube:catch",
+      "conditions": {
+        "lenient": true,
+        "entry": "wailord"
+      }
+    }
+  },
+  "rewards": {
+    "loot": [
+      "pokecube_legends:entities/regicores"
+    ]
+  },
+  "parent": "pokecube_legends:root"
+}

@@ -1,5 +1,3 @@
-# SampleAddon
-
 ## General Notes:
 
 The instructions here which reference a `runSetup.bat` are intended for use with Eclipse, if you use something else, the Readme.txt might help with setup instructions.

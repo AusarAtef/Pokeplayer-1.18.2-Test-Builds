@@ -1,0 +1,30 @@
+{
+  "replace": false,
+  "values": [
+    "#pokecube:evo_stones",
+    "#pokecube:ice",
+    "#pokecube:mossstone",
+    "#pokecube:icestone",
+    "#pokecube:razorfang",
+    "#pokecube:razorclaw",
+    "#pokecube:dragonscale",
+    "#pokecube:deepseascale",
+    "#pokecube:deepseatooth",
+    "pokecube:prismscale",
+    "pokecube:protector",
+    "pokecube:reapercloth",
+    "pokecube:magmarizer",
+    "pokecube:metalcoat",
+    "pokecube:dubiousdisc",
+    "pokecube:duskstone",
+    "pokecube:electirizer",
+    "pokecube:kingsrock",
+    "pokecube:upgrade",
+    "pokecube_legends:pdark",
+    "pokecube_legends:pwater",
+    "pokecube_legends:chippedpot",
+    "pokecube_legends:crackedpot",
+    "pokecube_legends:galarcuff",
+    "pokecube_legends:galarwreath"
+  ]
+}

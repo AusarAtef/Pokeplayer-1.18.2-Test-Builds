@@ -1,0 +1,52 @@
+{
+  "display": {
+    "icon": {
+      "item": "pokecube:ultracube"
+    },
+    "title": {
+      "translate": "achievement.pokelegends.weather",
+      "color": "gold",
+      "bold": false,
+      "italic": false,
+      "underlined": false,
+      "strikethrough": false,
+      "obfuscated": false
+    },
+    "description": {
+      "translate": "achievement.pokelegends.weather.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "catch_groudon": {
+      "trigger": "pokecube:catch",
+      "conditions": {
+        "lenient": true,
+        "entry": "groudon"
+      }
+    },
+    "catch_kyogre": {
+      "trigger": "pokecube:catch",
+      "conditions": {
+        "lenient": true,
+        "entry": "kyogre"
+      }
+    },
+    "catch_rayquaza": {
+      "trigger": "pokecube:catch",
+      "conditions": {
+        "lenient": true,
+        "entry": "rayquaza"
+      }
+    }
+  },
+  "rewards": {
+    "loot": [
+      "pokecube_legends:entities/legendscore"
+    ]
+  },
+  "parent": "pokecube_legends:root"
+}

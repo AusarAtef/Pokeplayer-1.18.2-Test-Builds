@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "pokecube:cubes",
+  "pattern": [
+    "RRR",
+    "CCC",
+    "DAD"
+  ],
+  "key": {
+    "R": {
+      "tag": "forge:dyes/blue"
+    },
+    "A": {
+      "tag": "forge:obsidian"
+    },
+    "D": {
+      "item": "pokecube_legends:golden_poppy"
+    },
+    "C": {
+      "item": "pokecube:premiercube"
+    }
+  },
+  "result": {
+    "item": "pokecube:typingcube",
+    "count": 3
+  }
+}

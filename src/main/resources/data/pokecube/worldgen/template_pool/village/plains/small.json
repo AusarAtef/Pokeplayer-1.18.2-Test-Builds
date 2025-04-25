@@ -1,0 +1,15 @@
+{
+  "name": "pokecube:village/plains/start_pool",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "pokecube:village/plains/town_centers/center_small",
+        "projection": "rigid",
+        "element_type": "pokecube:expanded_pool_element",
+        "processors": "pokecube:mossify_20_percent"
+      }
+    }
+  ]
+}

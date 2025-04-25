@@ -1,0 +1,102 @@
+{
+  "locations": [
+    {
+      "berry": "cheri, leppa, grepa",
+      "spawn": [
+        {
+          "and_preset": "plains",
+          "not_preset": "savannas"
+        },
+        {
+          "and_preset": "villages"
+        }
+      ]
+    },
+    {
+      "berry": "chesto, aspear",
+      "spawn": [
+        {
+          "and_preset": "forests",
+          "not_preset": "taigas,jungles"
+        }
+      ]
+    },
+    {
+      "berry": "rawst, jaboca, qualot",
+      "spawn": [
+        {
+          "and_preset": "hills"
+        },
+        {
+          "and_preset": "mountains"
+        },
+        {
+          "and_preset": "nether"
+        }
+      ]
+    },
+    {
+      "berry": "oran",
+      "spawn": [
+        {
+          "and_preset": "forests,hills"
+        },
+        {
+          "preset": "all",
+          "values": {
+            "priority": "100"
+          }
+        }
+      ]
+    },
+    {
+      "berry": "persim, cornn, kelpsy",
+      "spawn": [
+        {
+          "and_preset": "swamps"
+        }
+      ]
+    },
+    {
+      "berry": "lum, sitrus, nanab, pecha",
+      "spawn": [
+        {
+          "and_preset": "jungles,hills"
+        }
+      ]
+    },
+    {
+      "berry": "nanab, hondew",
+      "spawn": [
+        {
+          "and_preset": "beaches",
+          "not_preset": "cold_areas"
+        }
+      ]
+    },
+    {
+      "berry": "nanab, pinap, tamato",
+      "spawn": [
+        {
+          "and_preset": "jungles"
+        }
+      ]
+    },
+    {
+      "berry": "enigma",
+      "spawn": [
+        {
+          "or_preset": "end_surface,end_caves"
+        }
+      ]
+    },
+    {
+      "berry": "rowap, pomeg",
+      "spawn": [
+        {          
+          "and_preset": "taigas"
+        }
+      ]
+    }
+  ]
+}

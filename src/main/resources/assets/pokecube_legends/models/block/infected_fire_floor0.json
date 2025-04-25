@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_fire_floor",
+  "textures": {
+    "fire": "pokecube_legends:block/infected_fire_0"
+  }
+}

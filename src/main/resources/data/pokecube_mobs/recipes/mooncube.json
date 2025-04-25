@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "pokecube:cubes",
+  "pattern": [
+    "EQS",
+    "PTP",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "pokecube:premiercube"
+    },
+    "E": {
+      "tag": "forge:ender_pearls"
+    },
+    "Q": {
+      "tag": "forge:gems/quartz"
+    },
+    "S": {
+      "tag": "forge:gunpowder"
+    },
+    "T": {
+      "item": "minecraft:torch"
+    }
+  },
+  "result": {
+    "item": "pokecube:mooncube",
+    "count": 5
+  }
+}

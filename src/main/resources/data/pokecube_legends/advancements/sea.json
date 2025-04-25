@@ -1,0 +1,38 @@
+{
+  "display": {
+    "icon": {
+      "item": "pokecube_legends:oceanorb"
+    },
+    "title": {
+      "translate": "achievement.pokelegends.sea",
+      "color": "gold",
+      "bold": false,
+      "italic": false,
+      "underlined": false,
+      "strikethrough": false,
+      "obfuscated": false
+    },
+    "description": {
+      "translate": "achievement.pokelegends.sea.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "catch_lugia": {
+      "trigger": "pokecube:catch",
+      "conditions": {
+        "lenient": true,
+        "entry": "lugia"
+      }
+    }
+  },
+  "rewards": {
+    "loot": [
+      "pokecube_legends:entities/sea"
+    ]
+  },
+  "parent": "pokecube_legends:birds"
+}

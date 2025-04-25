@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "pokecube_legends:block/concrete_dense_planks",
+    "top": "pokecube_legends:block/concrete_dense_planks",
+    "side": "pokecube_legends:block/concrete_dense_planks"
+  }
+}

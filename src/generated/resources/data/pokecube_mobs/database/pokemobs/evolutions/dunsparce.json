@@ -1,0 +1,18 @@
+[
+ {
+	"name": "dudunsparce-three-segment",
+	"user": "dunsparce",
+	"condition": {
+		"key": "move",
+		"move": "hyper-drill"
+	}
+ },
+ {
+	"name": "dudunsparce-two-segment",
+	"user": "dunsparce",
+	"condition": {
+		"key": "move",
+		"move": "hyper-drill"
+	}
+  }
+]

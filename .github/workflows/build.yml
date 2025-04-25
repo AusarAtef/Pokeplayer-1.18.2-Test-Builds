@@ -1,4 +1,4 @@
-name: Build PokePlayer Project
+name: Build Pokeplayer Project
 
 on:
   push:

@@ -1,0 +1,82 @@
+{
+  "structures": [
+    {
+      "structure": "pokecube_legends:celebi_temple",
+      "weight": 1
+    },
+    {
+      "structure": "pokecube_legends:ho-oh_temple",
+      "weight": 1
+    },
+    {
+      "structure": "pokecube_legends:elite_four",
+      "weight": 1
+    },
+    {
+      "structure": "pokecube_legends:keldeo_place",
+      "weight": 1
+    },
+    {
+      "structure": "pokecube_legends:kubfu_dark",
+      "weight": 1
+    },
+    {
+      "structure": "pokecube_legends:kubfu_dojo",
+      "weight": 1
+    },
+    {
+      "structure": "pokecube_legends:kubfu_water",
+      "weight": 1
+    },
+    {
+      "structure": "pokecube_legends:legendary_tree",
+      "weight": 1
+    },
+    {
+      "structure": "pokecube_legends:lugia_tower",
+      "weight": 1
+    },
+    {
+      "structure": "pokecube_legends:nature_place",
+      "weight": 1
+    },
+    {
+      "structure": "pokecube_legends:necrozma_tower",
+      "weight": 1
+    },
+    {
+      "structure": "pokecube_legends:sky_pillar",
+      "weight": 1
+    },
+    {
+      "structure": "pokecube_legends:space_temple",
+      "weight": 1
+    },
+    {
+      "structure": "pokecube_legends:tapu_center",
+      "weight": 1
+    },
+    {
+      "structure": "pokecube_legends:xerneas_tree",
+      "weight": 1
+    },
+    {
+      "structure": "pokecube_legends:yveltal_ruins",
+      "weight": 1
+    },
+    {
+      "structure": "pokecube_legends:zacian_temple",
+      "weight": 1
+    },
+    {
+      "structure": "pokecube_legends:zamazenta_temple",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 1234567890,
+    "spacing": 12,
+    "separation": 4,
+    "type": "minecraft:random_spread"
+  }
+}

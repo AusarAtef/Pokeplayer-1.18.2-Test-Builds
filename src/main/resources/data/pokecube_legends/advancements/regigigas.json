@@ -1,0 +1,38 @@
+{
+  "display": {
+    "icon": {
+      "item": "pokecube_legends:regigiga_spawn"
+    },
+    "title": {
+      "translate": "achievement.pokelegends.regigigas",
+      "color": "gold",
+      "bold": false,
+      "italic": false,
+      "underlined": false,
+      "strikethrough": false,
+      "obfuscated": false
+    },
+    "description": {
+      "translate": "achievement.pokelegends.regigigas.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "catch_regigigas": {
+      "trigger": "pokecube:catch",
+      "conditions": {
+        "lenient": true,
+        "entry": "regigigas"
+      }
+    }
+  },
+  "rewards": {
+    "loot": [
+      "pokecube_legends:entities/legendscore"
+    ]
+  },
+  "parent": "pokecube_legends:regis"
+}

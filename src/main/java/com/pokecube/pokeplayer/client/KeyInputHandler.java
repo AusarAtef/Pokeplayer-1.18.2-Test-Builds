@@ -18,9 +18,10 @@ import pokecube.core.moves.MovesUtils;
 
 import java.util.Map;
 
-//@Mod.EventBusSubscriber(modid = "pokecube_expansion", value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = "pokecube_expansion", value = Dist.CLIENT)
 public class KeyInputHandler {
     private static int selectedMove = 0;
+    private static final int MAX_MOVES = 4;
     static Map<String, String> guistate = MachineSlotMenu.guistate;
 
     public static void handleKeyPress(int key){

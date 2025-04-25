@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "pokecube_legends:block/corrupted_dirt",
+    "top": "pokecube_legends:block/corrupted_grass_block_top",
+    "side": "pokecube_legends:block/corrupted_grass_block_side",
+    "particle": "pokecube_legends:block/corrupted_grass_block_side"
+  }
+}

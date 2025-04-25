@@ -1,0 +1,11 @@
+{
+  "type": "pokecube_legends:legends_recipe",
+  "blockId": "pokecube_legends:distortic_mirror",
+  "dimId": "pokecube_legends:distorted_world",
+  "input": {
+    "item": "pokecube_legends:distortic_grass_block"
+  },
+  "output": {
+    "item": "pokecube_legends:cracked_distortic_stone"
+  }
+}

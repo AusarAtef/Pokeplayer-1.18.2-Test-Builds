@@ -1,0 +1,6 @@
+{
+   "parent": "concrete:block/rebar_concrete_inventory",
+   "textures": {
+      "concrete": "minecraft:block/brown_concrete"
+   }
+}

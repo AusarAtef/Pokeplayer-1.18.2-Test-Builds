@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "group": "concrete_wall_gate",
+  "ingredient": {
+    "tag": "pokecube_legends:concrete_logs"
+  },
+  "result": "pokecube_legends:concrete_dense_wall_gate",
+  "count": 1
+}

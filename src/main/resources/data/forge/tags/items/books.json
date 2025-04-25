@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "pokecube_legends:nightmare_book",
+    {"id": "akashictome:tome", "required": false},
+    {"id": "computercraft:printed_book", "required": false},
+    {"id": "nethercraft:lava_book", "required": false},
+    {"id": "patchouli:guide_book", "required": false}
+  ]
+}

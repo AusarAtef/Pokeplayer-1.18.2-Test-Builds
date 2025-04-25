@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "pokecube:cubes",
+  "pattern": [
+    "CSC",
+    "CPC",
+    "QQQ"
+  ],
+  "key": {
+    "P": {
+      "item": "pokecube:premiercube"
+    },
+    "Q": {
+      "tag": "forge:gems/quartz"
+    },
+    "C": {
+      "tag": "minecraft:coals",
+      "data": 0
+    },
+    "S": {
+      "tag": "minecraft:sand",
+      "data": 1
+    }
+  },
+  "result": {
+    "item": "pokecube:timercube"
+  }
+}

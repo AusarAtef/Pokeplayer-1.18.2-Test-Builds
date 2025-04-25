@@ -1,0 +1,22 @@
+{
+  "structures": [
+    {
+      "structure": "pokecube:ancient_tomb",
+      "weight": 2
+    },
+    {
+      "structure": "pokecube:ruins",
+      "weight": 2
+    },
+    {
+      "structure": "pokecube:stonehenge",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 1575605452,
+    "spacing": 48,
+    "separation": 12,
+    "type": "minecraft:random_spread"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "parent": "pokecube:block/pokecubes_nonsymmetric",
+  "textures": {
+    "top": "pokecube:item/fastcubetop",
+    "bottom": "pokecube:item/fastcubebottom",
+    "front": "pokecube:item/fastcubefront",
+    "back": "pokecube:item/fastcubeback",
+    "side0": "pokecube:item/fastcubeside0",
+	"side1": "pokecube:item/fastcubeside1"
+  }
+}

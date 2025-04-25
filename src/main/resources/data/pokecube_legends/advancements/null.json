@@ -1,0 +1,38 @@
+{
+  "display": {
+    "icon": {
+      "item": "pokecube_legends:imprisonment_helmet"
+    },
+    "title": {
+      "translate": "achievement.pokelegends.null",
+      "color": "gold",
+      "bold": false,
+      "italic": false,
+      "underlined": false,
+      "strikethrough": false,
+      "obfuscated": false
+    },
+    "description": {
+      "translate": "achievement.pokelegends.null.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "catch_typenull": {
+      "trigger": "pokecube:catch",
+      "conditions": {
+        "lenient": true,
+        "entry": "type-null"
+      }
+    }
+  },
+  "rewards": {
+    "loot": [
+      "pokecube_legends:entities/legendscore"
+    ]
+  },
+  "parent": "pokecube_legends:root"
+}

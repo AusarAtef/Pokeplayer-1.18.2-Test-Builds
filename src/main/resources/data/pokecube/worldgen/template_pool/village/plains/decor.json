@@ -1,0 +1,24 @@
+{
+  "name": "pokecube:village/plains/decor",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 5,
+      "element": {
+        "location": "pokecube:village/common/deco/lamp_1",
+        "projection": "rigid",
+        "element_type": "pokecube:expanded_pool_element",
+        "processors": "pokecube:generic"
+      }
+    },
+    {
+      "weight": 8,
+      "element": {
+        "location": "pokecube:village/common/deco/banner_1",
+        "projection": "rigid",
+        "element_type": "pokecube:expanded_pool_element",
+        "processors": "pokecube:generic"
+      }
+    }
+  ]
+}

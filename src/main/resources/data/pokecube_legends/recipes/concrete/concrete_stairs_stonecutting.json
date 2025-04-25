@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "group": "wooden_stairs",
+  "ingredient": {
+    "item": "pokecube_legends:concrete_planks"
+  },
+  "result": "pokecube_legends:concrete_stairs",
+  "count": 1
+}

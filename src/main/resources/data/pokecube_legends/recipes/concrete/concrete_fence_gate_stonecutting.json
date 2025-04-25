@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "group": "wooden_fence_gate",
+  "ingredient": {
+    "tag": "pokecube_legends:concrete_logs"
+  },
+  "result": "pokecube_legends:concrete_fence_gate",
+  "count": 1
+}

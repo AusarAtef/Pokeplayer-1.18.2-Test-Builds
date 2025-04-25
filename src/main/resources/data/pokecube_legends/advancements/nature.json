@@ -1,0 +1,52 @@
+{
+  "display": {
+    "icon": {
+      "item": "pokecube_legends:revealglass"
+    },
+    "title": {
+      "translate": "achievement.pokelegends.nature",
+      "color": "gold",
+      "bold": false,
+      "italic": false,
+      "underlined": false,
+      "strikethrough": false,
+      "obfuscated": false
+    },
+    "description": {
+      "translate": "achievement.pokelegends.nature.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "catch_thundurusincarnate": {
+      "trigger": "pokecube:catch",
+      "conditions": {
+        "lenient": true,
+        "entry": "thundurus-incarnate"
+      }
+    },
+    "catch_landorusincarnate": {
+      "trigger": "pokecube:catch",
+      "conditions": {
+        "lenient": true,
+        "entry": "landorus-incarnate"
+      }
+    },
+    "catch_tornadusincarnate": {
+      "trigger": "pokecube:catch",
+      "conditions": {
+        "lenient": true,
+        "entry": "tornadus-incarnate"
+      }
+    }
+  },
+  "rewards": {
+    "loot": [
+      "pokecube_legends:entities/legendscore"
+    ]
+  },
+  "parent": "pokecube_legends:root"
+}

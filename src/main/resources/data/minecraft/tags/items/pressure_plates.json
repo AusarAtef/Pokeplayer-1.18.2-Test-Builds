@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:stone_pressure_plates",
+    "#minecraft:wooden_pressure_plates"
+  ]
+}

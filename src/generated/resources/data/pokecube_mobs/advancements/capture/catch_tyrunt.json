@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "pokecube:pokecube"
+    },
+    "title": {
+      "translate": "achievement.pokecube.catch",
+      "with": [
+        {
+          "translate": "entity.pokecube.tyrunt"
+        }
+      ]
+    },
+    "description": {
+      "translate": "achievement.pokecube.catch.desc",
+      "with": [
+        {
+          "translate": "entity.pokecube.tyrunt"
+        }
+      ]
+    }
+  },
+  "criteria": {
+    "catch_tyrunt": {
+      "trigger": "pokecube:catch",
+      "conditions": {
+        "entry": "tyrunt"
+      }
+    }
+  },
+  "parent": "pokecube_mobs:capture/get_first_pokemob"
+}

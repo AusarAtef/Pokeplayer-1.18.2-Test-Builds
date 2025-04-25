@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "pokecube:mega_stones",
+  "pattern": [
+    "SSS",
+    "SWS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "tag": "forge:stone"
+    },
+    "W": {
+      "item": "minecraft:torch"
+    }
+  },
+  "result": {
+    "item": "pokecube:firestone"
+  }
+}

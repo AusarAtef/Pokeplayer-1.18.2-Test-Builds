@@ -1,0 +1,38 @@
+{
+  "display": {
+    "icon": {
+      "item": "pokecube_legends:soul_heart"
+    },
+    "title": {
+      "translate": "achievement.pokelegends.magearna",
+      "color": "light_purple",
+      "bold": false,
+      "italic": false,
+      "underlined": false,
+      "strikethrough": false,
+      "obfuscated": false
+    },
+    "description": {
+      "translate": "achievement.pokelegends.magearna.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "catch_magearna": {
+      "trigger": "pokecube:catch",
+      "conditions": {
+        "lenient": true,
+        "entry": "magearna"
+      }
+    }
+  },
+  "rewards": {
+    "loot": [
+      "pokecube_legends:entities/legendscore"
+    ]
+  },
+  "parent": "pokecube_legends:root"
+}

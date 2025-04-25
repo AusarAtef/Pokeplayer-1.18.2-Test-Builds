@@ -1,0 +1,7 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "thut_bling:item/ender_bag_large",
+		"layer1": "thut_bling:item/ender_bag_large_overlay"
+	}
+}

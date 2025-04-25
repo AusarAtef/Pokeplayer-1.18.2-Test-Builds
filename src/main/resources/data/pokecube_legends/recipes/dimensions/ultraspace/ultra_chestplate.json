@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "pokecube_legends:ultra_chestplate",
+  "pattern": [
+    "R R",
+    "RTR",
+    "XRX"
+  ],
+  "key": {
+    "X": {
+      "tag": "forge:ingots/iron"
+    },
+    "T": {
+      "item": "pokecube_legends:magnetic_stone"
+    },
+    "R": {
+      "tag": "forge:gems/spectrum"
+    }
+  },
+  "result": {
+    "item": "pokecube_legends:ultra_chestplate",
+    "count": 1
+  }
+}

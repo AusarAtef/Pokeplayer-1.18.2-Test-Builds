@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "pokecube:block/sitrus_planks",
+    "top": "pokecube:block/sitrus_planks",
+    "side": "pokecube:block/sitrus_planks"
+  }
+}

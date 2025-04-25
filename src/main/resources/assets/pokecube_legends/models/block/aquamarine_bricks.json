@@ -1,0 +1,12 @@
+{
+   "parent": "block/cube",
+   "textures": {
+	"down": "pokecube_legends:block/aquamarine_bricks",
+    "up": "pokecube_legends:block/aquamarine_bricks",
+    "north": "pokecube_legends:block/aquamarine_bricks",
+    "east": "pokecube_legends:block/aquamarine_bricks",
+    "south": "pokecube_legends:block/aquamarine_bricks",
+    "west": "pokecube_legends:block/aquamarine_bricks",
+    "particle": "pokecube_legends:block/aquamarine_bricks"
+   }
+}

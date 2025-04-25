@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "pokecube_legends:orb",
+  "pattern": [
+    "GRG",
+    "RAR",
+    "GRG"
+  ],
+  "key": {
+    "G": {
+      "tag": "forge:gems/sapphire"
+    },
+    "A": {
+      "item": "pokecube_legends:grayorb"
+    },
+    "R": {
+      "tag": "forge:storage_blocks/sapphire"
+    }
+  },
+  "result": {
+    "item": "pokecube_legends:blueorb",
+    "count": 1
+  }
+}

@@ -1,0 +1,8 @@
+{
+	"variants": {
+        "facing=north": { "model": "pokecube:block/pokecenter" },
+        "facing=south": {"model": "pokecube:block/pokecenter", "y": 180 },
+        "facing=west":  {"model": "pokecube:block/pokecenter","y": 270 },
+        "facing=east":  { "model": "pokecube:block/pokecenter","y": 90 }
+	}
+}

@@ -1,0 +1,16 @@
+{
+  "elements": [
+    {
+      "element": {
+        "element_type": "pokecube:expanded_pool_element",
+        "location": "pokecube:village/taiga/town_centers/center_small",
+        "processors": "pokecube:generic",
+        "int_config":{"y_offset": -2},
+        "projection": "rigid"
+      },
+      "weight": 1
+    }
+  ],
+  "fallback": "minecraft:empty",
+  "name": "pokecube:village/taiga/small"
+}

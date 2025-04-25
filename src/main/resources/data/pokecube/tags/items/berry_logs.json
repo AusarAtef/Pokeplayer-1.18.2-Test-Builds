@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "#pokecube:enigma_logs",
+    "#pokecube:leppa_logs",
+    "#pokecube:nanab_logs",
+    "#pokecube:oran_logs",
+    "#pokecube:pecha_logs",
+    "#pokecube:sitrus_logs"
+  ]
+}

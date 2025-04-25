@@ -1,0 +1,610 @@
+{
+  "pools": [
+    {
+      "name": "pokecube_legends:temples/surface_base",
+      "rigid": false,
+      "options": [
+        "pokecube_legends:temples/surface/base"
+      ]
+    },
+    {
+      "name": "pokecube_legends:temples/underwater_base",
+      "rigid": false,
+      "options": [
+        "pokecube_legends:temples/underwater/base"
+      ]
+    },
+    {
+      "name": "pokecube_legends:temples/underground_base",
+      "rigid": false,
+      "options": [
+        "pokecube_legends:temples/underground/base"
+      ]
+    },
+    {
+      "name": "pokecube_legends:necrozma_tower",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:ultraspace/temples/necro_1"
+      ]
+    },
+    {
+      "name": "pokecube_legends:ultraspace/temples/necro_2",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:ultraspace/temples/necro_2"
+      ]
+    },
+    {
+      "name": "pokecube_legends:ultraspace/temples/necro_3",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:ultraspace/temples/necro_3"
+      ]
+    },
+    {
+      "name": "pokecube_legends:tapus_temple",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/tapu_center;{\"dy\":-1}"
+      ]
+    },
+    {
+      "name": "pokecube_legends:temples/surface/tapu_road_1",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/tapu_road_1;{\"dy\":-1}"
+      ]
+    },
+    {
+      "name": "pokecube_legends:temples/surface/tapu_road_2",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/tapu_road_2;{\"dy\":-1}"
+      ]
+    },
+    {
+      "name": "pokecube_legends:temples/surface/tapu_road_3",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/tapu_road_3;{\"dy\":-1}"
+      ]
+    },
+    {
+      "name": "pokecube_legends:temples/surface/tapu_road_4",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/tapu_road_4;{\"dy\":-1}"
+      ]
+    },
+    {
+      "name": "pokecube_legends:temples/surface/tapu_room_1",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/tapu_koko;{\"dy\":-1}"
+      ]
+    },
+    {
+      "name": "pokecube_legends:temples/surface/tapu_room_2",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/tapu_bulu;{\"dy\":-1}"
+      ]
+    },
+    {
+      "name": "pokecube_legends:temples/surface/tapu_room_3",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/tapu_lele;{\"dy\":-1}"
+      ]
+    },
+    {
+      "name": "pokecube_legends:temples/surface/tapu_room_4",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/tapu_fini;{\"dy\":-1}"
+      ]
+    },
+    {
+      "name": "pokecube_legends:castle_n",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/castle/castle_n"
+      ]
+    },
+    {
+      "name": "pokecube_legends:temples/surface/castle/tower_left/tower_1",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/castle/tower_left/tower_1"
+      ]
+    },
+    {
+      "name": "pokecube_legends:temples/surface/castle/tower_left/tower_end",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/castle/tower_left/tower_end"
+      ]
+    },
+    {
+      "name": "pokecube_legends:temples/surface/castle/tower_right/tower_1",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/castle/tower_right/tower_1"
+      ]
+    },
+    {
+      "name": "pokecube_legends:temples/surface/castle/tower_right/tower_end",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/castle/tower_right/tower_end"
+      ]
+    },
+    {
+      "name": "pokecube_legends:elite_four",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/elite_four"
+      ]
+    },
+    {
+      "name": "pokecube_legends:nature_place",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/nature_place"
+      ]
+    },
+    {
+      "name": "pokecube_legends:temples/surface/nature_place_top",
+      "rigid": true,
+      "options": [
+        "pokecube_legends:temples/surface/nature_place_top"
+      ]
+    },
+    {
+      "name": "pokecube_legends:lugia_tower",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/lugia_tower"
+      ]
+    },
+    {
+      "name": "pokecube_legends:legendy_tree",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/legendy_tree"
+      ]
+    },
+    {
+      "name": "pokecube_legends:temples/surface/legendy_tree_center",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/legendy_tree_center"
+      ]
+    },
+    {
+      "name": "pokecube_legends:temples/surface/legendy_tree_top",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/legendy_tree_top"
+      ]
+    },
+    {
+      "name": "pokecube_legends:yveltal_place",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/yveltal_place"
+      ]
+    },
+    {
+      "name": "pokecube_legends:keldeo_place",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/keldeo_place"
+      ]
+    },
+    {
+      "name": "pokecube_legends:sky_pillar",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/sky_pillar_base"
+      ]
+    },
+    {
+      "name": "pokecube_legends:temples/surface/sky_pillar_top",
+      "rigid": true,
+      "options": [
+        "pokecube_legends:temples/surface/sky_pillar_top"
+      ]
+    },
+    {
+      "name": "pokecube_legends:xerneas_place",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/xerneas_place"
+      ]
+    },
+    {
+      "name": "pokecube_legends:kubfu_dojo",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/kubfu_dojo"
+      ]
+    },
+    {
+      "name": "pokecube_legends:kubfu_water",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/kubfu_water"
+      ]
+    },
+    {
+      "name": "pokecube_legends:kubfu_dark",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/kubfu_dark"
+      ]
+    },
+    {
+      "name": "pokecube_legends:hooh_tower",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/hooh_temple_base"
+      ]
+    },
+    {
+      "name": "pokecube_legends:temples/surface/hooh_temple_top",
+      "rigid": true,
+      "options": [
+        "pokecube_legends:temples/surface/hooh_temple_top"
+      ]
+    },
+    {
+      "name": "pokecube_legends:zamazenta_temple",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/zamazenta_temple"
+      ]
+    },
+    {
+      "name": "pokecube_legends:zacian_temple",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/zacian_temple"
+      ]
+    },
+    {
+      "name": "pokecube_legends:space_temple",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/space_temple"
+      ]
+    },
+    {
+      "name": "pokecube_legends:celebi_temple",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/surface/celebi_temple"
+      ]
+    },
+    {
+      "name": "pokecube_legends:groudon_temple",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/underground/groudon_temple;{\"dy\":-1}"
+      ]
+    },
+    {
+      "name": "pokecube_legends:kyogre_temple",
+      "rigid": true,
+      "ignoreAir": false,
+      "options": [
+        "pokecube_legends:temples/underwater/kyogre_temple"
+      ]
+    }
+  ],
+  "jigsaws": [
+    {
+      "name": "pokecube_legends:elite_four",
+      "root": "pokecube_legends:elite_four",
+      "biomeType": "none",
+      "distance": 128,
+      "separation": 32,
+      "spawn": {
+        "values": {
+          "types": "all",
+          "categoryBlacklist": "ocean,beach"
+        }
+      }
+    },
+    {
+      "name": "pokecube_legends:tapus_temple",
+      "root": "pokecube_legends:tapus_temple",
+      "biomeType": "beach",
+      "distance": 84,
+      "separation": 32,
+      "size": 6,
+      "spawn": {
+        "values": {
+          "category": "beach"
+        }
+      }
+    },
+    {
+      "name": "pokecube_legends:castle_n",
+      "root": "pokecube_legends:castle_n",
+      "biomeType": "ruin",
+      "distance": 84,
+      "separation": 32,
+      "spawn": {
+        "values": {
+          "category": "taiga",
+          "categoryBlacklist": "ocean,beach"
+        }
+      }
+    },
+    {
+      "name": "pokecube_legends:kubfu_dojo",
+      "root": "pokecube_legends:kubfu_dojo",
+      "biomeType": "none",
+      "distance": 84,
+      "separation": 32,
+      "spawn": {
+        "values": {
+          "category": "plains"
+        }
+      }
+    },
+    {
+      "name": "pokecube_legends:kubfu_water",
+      "root": "pokecube_legends:kubfu_water",
+      "biomeType": "none",
+      "distance": 84,
+      "separation": 32,
+      "spawn": {
+        "values": {
+          "category": "beach"
+        }
+      }
+    },
+    {
+      "name": "pokecube_legends:kubfu_dark",
+      "root": "pokecube_legends:kubfu_dark",
+      "biomeType": "none",
+      "distance": 84,
+      "separation": 32,
+      "spawn": {
+        "values": {
+          "category": "extreme_hills"
+        }
+      }
+    },
+    {
+      "name": "pokecube_legends:nature_place",
+      "root": "pokecube_legends:nature_place",
+      "biomeType": "none",
+      "distance": 84,
+      "separation": 32,
+      "spawn": {
+        "values": {
+          "category": "swamp"
+        }
+      }
+    },
+    {
+      "name": "pokecube_legends:yveltal_place",
+      "root": "pokecube_legends:yveltal_place",
+      "biomeType": "ruin",
+      "distance": 84,
+      "separation": 32,
+      "spawn": {
+        "values": {
+          "types": "sandy"
+        }
+      }
+    },
+    {
+      "name": "pokecube_legends:lugia_tower",
+      "root": "pokecube_legends:lugia_tower",
+      "biomeType": "none",
+      "distance": 84,
+      "separation": 32,
+      "spawn": {
+        "values": {
+          "category": "beach"
+        }
+      }
+    },
+    {
+      "name": "pokecube_legends:legendy_tree",
+      "root": "pokecube_legends:legendy_tree",
+      "biomeType": "none",
+      "distance": 84,
+      "separation": 32,
+      "spawn": {
+        "values": {
+          "category": "plains"
+        }
+      }
+    },
+    {
+      "name": "pokecube_legends:sky_pillar",
+      "root": "pokecube_legends:sky_pillar",
+      "biomeType": "ruin",
+      "distance": 84,
+      "separation": 32,
+      "base_under": true,
+      "spawn": {
+        "values": {
+          "category": "ocean"
+        }
+      }
+    },
+    {
+      "name": "pokecube_legends:celebi_temple",
+      "root": "pokecube_legends:celebi_temple",
+      "biomeType": "none",
+      "distance": 84,
+      "separation": 32,
+      "spawn": {
+        "values": {
+          "category": "forest",
+          "typesBlacklist": "sparse,cold,dry,spooky"
+        }
+      }
+    },
+    {
+      "name": "pokecube_legends:space_temple",
+      "root": "pokecube_legends:space_temple",
+      "biomeType": "ruin",
+      "distance": 84,
+      "separation": 32,
+      "spawn": {
+        "values": {
+          "category": "the_end",
+          "strict_type_cat": true
+        }
+      }
+    },
+    {
+      "name": "pokecube_legends:zacian_temple",
+      "root": "pokecube_legends:zacian_temple",
+      "biomeType": "none",
+      "distance": 84,
+      "separation": 32,
+      "spawn": {
+        "values": {
+          "category": "river"
+        }
+      }
+    },
+    {
+      "name": "pokecube_legends:zamazenta_temple",
+      "root": "pokecube_legends:zamazenta_temple",
+      "biomeType": "none",
+      "distance": 84,
+      "separation": 32,
+      "spawn": {
+        "values": {
+          "category": "river"
+        }
+      }
+    },
+    {
+      "name": "pokecube_legends:hooh_tower",
+      "root": "pokecube_legends:hooh_tower",
+      "biomeType": "none",
+      "distance": 84,
+      "separation": 32,
+      "spawn": {
+        "values": {
+          "category": "plains"
+        }
+      }
+    },
+    {
+      "name": "pokecube_legends:xerneas_place",
+      "root": "pokecube_legends:xerneas_place",
+      "biomeType": "none",
+      "distance": 84,
+      "separation": 32,
+      "spawn": {
+        "values": {
+          "types": "spooky"
+        }
+      }
+    },
+    {
+      "name": "pokecube_legends:keldeo_place",
+      "root": "pokecube_legends:keldeo_place",
+      "biomeType": "none",
+      "distance": 84,
+      "separation": 32,
+      "spawn": {
+        "values": {
+          "category": "extreme_hills"
+        }
+      }
+    },
+    {
+      "name": "pokecube_legends:kyogre_temple",
+      "root": "pokecube_legends:kyogre_temple",
+      "biomeType": "none",
+      "distance": 84,
+      "separation": 32,
+      "water": true,
+      "spawn": {
+        "values": {
+          "category": "ocean"
+        }
+      }
+    },
+    {
+      "name": "pokecube_legends:groudon_temple",
+      "root": "pokecube_legends:groudon_temple",
+      "biomeType": "ruin",
+      "distance": 84,
+      "separation": 32,
+      "surface": false,
+      "base_under": false,
+      "spawn": {
+        "values": {
+          "category": "nether",
+          "strict_type_cat": true
+        }
+      }
+    },
+    {
+      "name":"pokecube_legends:necrozma_tower",
+      "root":"pokecube_legends:necrozma_tower",
+      "biomeType":"none",
+      "distance":45,
+      "separation":22,
+      "size":6,
+      "dimWhitelist":[
+        "pokecube_legends:ultraspace"
+      ],
+      "spawn":{
+        "values":{
+          "biomes":"pokecube_legends:blinding_deltas, pokecube_legends:dried_blinding_deltas, pokecube_legends:magmatic_blinding_deltas, pokecube_legends:shattered_blinding_deltas, pokecube_legends:volcanic_blinding_deltas"
+        }
+      }
+    }
+  ]
+}

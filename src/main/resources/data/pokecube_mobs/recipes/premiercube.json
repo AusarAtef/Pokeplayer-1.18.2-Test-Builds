@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "pokecube:cubes",
+  "pattern": [
+    "III",
+    "CBC",
+    "III"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:stone_button"
+    },
+    "C": {
+      "tag": "minecraft:coals"
+    },
+    "I": {
+      "tag": "forge:ingots/iron"
+    }
+  },
+  "result": {
+    "item": "pokecube:premiercube",
+    "count": 12
+  }
+}

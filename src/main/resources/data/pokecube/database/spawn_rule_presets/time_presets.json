@@ -1,0 +1,36 @@
+{
+  "rules":[
+    {
+      "preset":"day_time",
+      "matchers":{
+        "time":{
+          "preset":"day"
+        }
+      }
+    },
+    {
+      "preset":"night_time",
+      "matchers":{
+        "time":{
+          "preset":"night"
+        }
+      }
+    },
+    {
+      "preset":"dusk",
+      "matchers":{
+        "time":{
+          "preset":"dusk"
+        }
+      }
+    },
+    {
+      "preset":"dawn",
+      "matchers":{
+        "time":{
+          "preset":"dawn"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "priority": 101,
+  "types": [
+    {
+      "name": "???",
+      "colour": 0,
+      "outgoing": []
+    }
+  ]
+}

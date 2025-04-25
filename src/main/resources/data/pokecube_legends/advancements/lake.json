@@ -1,0 +1,52 @@
+{
+  "display": {
+    "icon": {
+      "item": "pokecube_legends:head_mirror"
+    },
+    "title": {
+      "translate": "achievement.pokelegends.lake",
+      "color": "gold",
+      "bold": false,
+      "italic": false,
+      "underlined": false,
+      "strikethrough": false,
+      "obfuscated": false
+    },
+    "description": {
+      "translate": "achievement.pokelegends.lake.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "catch_azelf": {
+      "trigger": "pokecube:catch",
+      "conditions": {
+        "lenient": true,
+        "entry": "azelf"
+      }
+    },
+    "catch_mesprit": {
+      "trigger": "pokecube:catch",
+      "conditions": {
+        "lenient": true,
+        "entry": "mesprit"
+      }
+    },
+    "catch_uxie": {
+      "trigger": "pokecube:catch",
+      "conditions": {
+        "lenient": true,
+        "entry": "uxie"
+      }
+    }
+  },
+  "rewards": {
+    "loot": [
+      "pokecube_legends:entities/lake"
+    ]
+  },
+  "parent": "pokecube_legends:root"
+}

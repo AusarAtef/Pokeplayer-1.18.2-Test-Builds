@@ -1,0 +1,15 @@
+{
+  "name": "pokecube_legends:temples/surface_temples/regieleki_temple",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "pokecube_legends:temples/surface/regieleki_temple",
+        "processors": "pokecube_legends:regieleki_temple",
+        "element_type": "pokecube:expanded_pool_element",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

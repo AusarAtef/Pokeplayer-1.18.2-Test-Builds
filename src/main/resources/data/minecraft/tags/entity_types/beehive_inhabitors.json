@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {"id": "pokecube:cutiefly", "required": false},
+    {"id": "pokecube:ribombee", "required": false},
+    {"id": "pokecube:combee", "required": false},
+    {"id": "pokecube:vespiquen", "required": false}
+  ]
+}

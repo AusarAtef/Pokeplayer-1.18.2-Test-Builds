@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "pokecube_legends:ultra_helmet",
+  "pattern": [
+    "RTR",
+    "RAR",
+    "X X"
+  ],
+  "key": {
+    "R": {
+      "tag": "forge:gems/diamond"
+    },
+    "T": {
+      "item": "pokecube_legends:magnetic_stone"
+    },
+    "A": {
+      "tag": "forge:glass/tinted"
+    },
+    "X": {
+      "tag": "forge:gems/spectrum"
+    }
+  },
+  "result": {
+    "item": "pokecube_legends:ultra_helmet",
+    "count": 1
+  }
+}

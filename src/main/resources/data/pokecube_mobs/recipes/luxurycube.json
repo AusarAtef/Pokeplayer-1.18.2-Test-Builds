@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "pokecube:cubes",
+  "pattern": [
+    "GRG",
+    "PPP",
+    "CCC"
+  ],
+  "key": {
+    "P": {
+      "item": "pokecube:premiercube"
+    },
+    "G": {
+      "tag": "forge:ingots/gold"
+    },
+    "R": {
+      "tag": "forge:dusts/redstone"
+    },
+    "C": {
+      "tag": "minecraft:coals"
+    }
+  },
+  "result": {
+    "item": "pokecube:luxurycube",
+    "count": 3
+  }
+}

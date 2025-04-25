@@ -1,0 +1,11 @@
+{
+  "parent": "pokecube:block/pokecubes_nonsymmetric",
+  "textures": {
+    "top": "pokecube:item/safaricubetop",
+    "bottom": "pokecube:item/safaricubebottom",
+    "front": "pokecube:item/safaricubefront",
+    "back": "pokecube:item/safaricubeback",
+	"side0": "pokecube:item/safaricubeside0",
+    "side1": "pokecube:item/safaricubeside1"
+  }
+}

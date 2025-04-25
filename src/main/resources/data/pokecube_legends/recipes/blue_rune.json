@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "pokecube_legends:rune",
+  "pattern": [
+    "010",
+    "040",
+    "010"
+  ],
+  "key": {
+    "0": {
+      "tag": "forge:stone"
+    },
+    "1": {
+      "item": "pokecube_legends:blueorb"
+    },
+    "4": {
+      "tag": "forge:gems/lapis"
+    }
+  },
+  "result": {
+    "item": "pokecube_legends:blue_rune",
+    "count": 1
+  }
+}

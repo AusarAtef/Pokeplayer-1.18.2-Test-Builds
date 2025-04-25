@@ -1,0 +1,11 @@
+{
+  "parent": "pokecube_legends:block/pokecubes",
+  "textures": {
+    "top": "pokecube_legends:item/beastcubetop",
+    "bottom": "pokecube_legends:item/beastcubebottom",
+    "front": "pokecube_legends:item/beastcubefront",
+    "back": "pokecube_legends:item/beastcubeback",
+    "side0": "pokecube_legends:item/beastcubeside",
+	"side1": "pokecube_legends:item/beastcubeside"
+  }
+}

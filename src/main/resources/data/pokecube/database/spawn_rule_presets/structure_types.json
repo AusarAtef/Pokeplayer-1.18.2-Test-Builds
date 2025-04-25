@@ -1,0 +1,30 @@
+{
+  "rules":[
+    {
+      "preset":"deep_oceans",
+      "and_preset":"overworld",
+      "matchers":{
+        "biome":{
+          "biome_tags":"#minecraft:is_deep_ocean"
+        }
+      }
+    },
+    {
+      "preset":"villages",
+      "matchers":{
+        "structures":{
+          "names":"#minecraft:village"
+        }
+      }
+    },
+    {
+      "preset":"ocean_monument",
+      "and_preset":"in_water",
+      "matchers":{
+        "structures":{
+          "names":"minecraft:monument"
+        }
+      }
+    }
+  ]
+}

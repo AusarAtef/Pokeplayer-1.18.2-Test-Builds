@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:cobblestone/dusk_dolerite",
+    "#forge:cobblestone/ultra_stone",
+    "#forge:cobblestone/ultra_darkstone"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "pokecube:block/pecha_planks",
+    "top": "pokecube:block/pecha_planks",
+    "side": "pokecube:block/pecha_planks"
+  }
+}

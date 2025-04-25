@@ -1,0 +1,15 @@
+{
+  "pools": [
+    {
+      "name": "pool_0",
+      "rolls": 2,
+      "entries": [
+        {
+          "type": "item",
+          "name": "pokecube_legends:silver_wing",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

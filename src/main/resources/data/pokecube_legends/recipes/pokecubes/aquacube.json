@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "pokecube:cubes",
+  "pattern": [
+    "RAR",
+    "CCC",
+    "RRR"
+  ],
+  "key": {
+    "R": {
+      "tag": "forge:dyes/white"
+    },
+    "A": {
+      "tag": "forge:dyes/blue"
+    },
+    "C": {
+      "item": "pokecube:divecube"
+    }
+  },
+  "result": {
+    "item": "pokecube:teamaquacube",
+    "count": 3
+  }
+}
