@@ -127,3 +127,7 @@ def replaceParameters(filename, find, replace) {
 def cleanTOML() {
     delete "./build/resources/main/META-INF/mods.toml"
 }
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs << "-Xlint:-deprecation"
+}
