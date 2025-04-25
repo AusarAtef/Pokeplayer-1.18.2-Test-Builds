@@ -1,12 +1,7 @@
 name: Build Pokeplayer Project
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  workflows_dispatch
 
 jobs:
   build:
