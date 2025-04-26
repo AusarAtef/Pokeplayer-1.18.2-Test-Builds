@@ -32,10 +32,13 @@ public class DefaultPokemob extends PokemobSexed implements ICapabilitySerializa
 {
     private final LazyOptional<IPokemob> holder = LazyOptional.of(() -> this);
 
-    public DefaultPokemob()
-    {
-        for (final AIRoutine routine : AIRoutine.values()) this.setRoutineState(routine, routine.getDefault());
+    public DefaultPokemob() {
+        super(); // Calls the parent constructor (PokemobSexed)
+        this.initGenes(); // Initialize the genetics system
+        for (final AIRoutine routine : AIRoutine.values()) {
+            this.setRoutineState(routine, routine.getDefault());
     }
+}
 
     public DefaultPokemob(final Mob mob)
     {
