@@ -32,8 +32,6 @@ public class VanillaPokemob extends PokemobSaves implements ICapabilitySerializa
     private final LazyOptional<IPokemob> holder = LazyOptional.of(() -> this);
 
     public VanillaPokemob() {
-        super(); // Calls the parent constructor (PokemobSaves)
-        initializeGenes(); // Initialize the genetics system
         for (final AIRoutine routine : AIRoutine.values()) {
             this.setRoutineState(routine, routine.getDefault());
     }
