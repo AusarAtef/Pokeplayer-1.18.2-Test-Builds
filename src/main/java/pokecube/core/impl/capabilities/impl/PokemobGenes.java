@@ -115,8 +115,8 @@ public abstract class PokemobGenes extends PokemobSided implements IMobColourabl
 
     private void initGenes()
     {
-        PokecubeAPI.LOGGER.error("IMobGenetics is null for entity: " + this.getEntity());
         if (this.getGenes() == null) throw new RuntimeException("This should not be called here");
+        PokecubeAPI.LOGGER.error("IMobGenetics is null for entity: " + this.getEntity());
 
         this.genesSpecies = this.getGenes().getAlleles(GeneticsManager.SPECIESGENE);
         this.genesShiny = this.getGenes().getAlleles(GeneticsManager.SHINYGENE);
