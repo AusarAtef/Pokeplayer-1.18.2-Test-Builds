@@ -33,7 +33,7 @@ public class VanillaPokemob extends PokemobSaves implements ICapabilitySerializa
 
     public VanillaPokemob() {
         super(); // Calls the parent constructor (PokemobSaves)
-        this.initGenes(); // Initialize the genetics system
+        initializeGenes(); // Initialize the genetics system
         for (final AIRoutine routine : AIRoutine.values()) {
             this.setRoutineState(routine, routine.getDefault());
     }
