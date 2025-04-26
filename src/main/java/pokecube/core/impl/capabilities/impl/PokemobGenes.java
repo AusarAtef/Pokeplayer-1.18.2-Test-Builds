@@ -45,8 +45,12 @@ public abstract class PokemobGenes extends PokemobSided implements IMobColourabl
     };
 
 					public void initializeGenes() {
-    					this.initGenes(); // Call the private method
-}
+      if (this.getGenes() != null) {
+          this.initGenes(); // Safe to call
+      } else {
+          PokecubeAPI.LOGGER.error("Cannot initialize genes as 'genes' is null.");
+      }
+  }
 
     static
     {
