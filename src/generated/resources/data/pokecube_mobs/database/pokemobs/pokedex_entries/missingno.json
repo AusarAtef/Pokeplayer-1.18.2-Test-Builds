@@ -2,10 +2,16 @@
   "name": "missingno",
   "id": 0,
   "stock": true,
+  "base_experience": 300,
   "size": {
     "height": 1
   },
+  "mass": 9,
   "is_default": true,
+  "capture_rate": 29,
+  "base_happiness": 0,
+  "growth_rate": "slow",
+  "gender_rate": 255,
   "stats": {
     "hp": 33,
     "attack": 136,
