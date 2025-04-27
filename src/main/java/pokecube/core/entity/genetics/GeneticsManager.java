@@ -238,26 +238,32 @@ public class GeneticsManager
     }
 
     public static void initMob(final Entity mob)
-    {
-        if (!(mob instanceof LivingEntity living)) return;
-        IMobGenetics genes = ThutCaps.getGenetics(living);
-        if (genes == null) {
-            LOGGER.warn("IMobGenetics not found for entity: {}", living);
-            return;
+{
+    if (!(mob instanceof LivingEntity living)) return;
+
+    IMobGenetics genes = ThutCaps.getGenetics(living);
+    if (genes == null) {
+        LOGGER.warn("IMobGenetics not found for entity: {}", living);
+        return;
+    }
+
+    LOGGER.info("Initializing mob genetics for entity: {}", living);
+    GENE_PROVIDERS.forEach(p -> {
+        try {
+            p.accept(living);
+            LOGGER.debug("GENE_PROVIDER executed successfully for entity: {}", living);
+        } catch (Exception e) {
+            LOGGER.error("Error while applying GENE_PROVIDER for entity: {}", living, e);
         }
-        LOGGER.info("Initializing mob genetics for entity: {}", living);
-        GENE_PROVIDERS.forEach(p -> {
-            try {
-                p.accept(living);
-                LOGGER.debug("GENE_PROVIDER executed successfully for entity: {}", living);
-            } catch (Exception e) {
-                LOGGER.error("Error while applying GENE_PROVIDER for entity: {}", living, e);
-            }
+    });
+
+    if (!living.level.isClientSide() && living.isAddedToWorld()) {
+        genes.getAlleles().forEach((key, alleles) -> {
+            PacketSyncGene.syncGeneToTracking(living, alleles);
+            LOGGER.debug("Synced allele '{}' for entity: {}", key, living);
         });
     }
-        if (!living.level.isClientSide() && living.isAddedToWorld())
-            genes.getAlleles().forEach((key, alleles) -> PacketSyncGene.syncGeneToTracking(living, alleles));
-    }
+}
 
     @Nullable
     public static IMobGenetics getGenes(ItemStack stack)
