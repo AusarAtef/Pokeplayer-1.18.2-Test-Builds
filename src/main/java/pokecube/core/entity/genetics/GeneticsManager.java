@@ -255,7 +255,6 @@ public class GeneticsManager
             }
         });
     }
-        GENE_PROVIDERS.forEach(p -> p.accept(living));
         if (!living.level.isClientSide() && living.isAddedToWorld())
             genes.getAlleles().forEach((key, alleles) -> PacketSyncGene.syncGeneToTracking(living, alleles));
     }
