@@ -568,20 +568,27 @@ public abstract class PokemobGenes extends PokemobSided implements IMobColourabl
 
     @Override
 public PokedexEntry getBasePokedexEntry() {
-    if (this._speciesCache == null) { 
+    if (this._speciesCache == null) {
         PokecubeAPI.LOGGER.error("genesSpecies is null! Entity: " + this.entity);
-        
-        // Ensure getPokedexEntry() is called before accessing _speciesCache
+
+        // Attempt to initialize _speciesCache by calling getPokedexEntry()
         this.getPokedexEntry();
 
         if (this.genesSpecies == null) {
             throw new NullPointerException("genesSpecies is null! Entity: " + this.entity);
         }
 
+        // Ensure _speciesCache is valid after calling getPokedexEntry()
+        if (this._speciesCache == null) {
+            throw new NullPointerException("_speciesCache is null after initialization! Entity: " + this.entity);
+        }
+
         return this._speciesCache.getValue().getBaseEntry();
     }
-    
-    return Database.getEntry(this.genesSpecies.getExpressed());
+
+    // Convert genesSpecies.getExpressed() to a type compatible with Database.getEntry()
+    String speciesName = this.genesSpecies.getExpressed().toString(); // Convert to String
+    return Database.getEntry(speciesName);
 }
 
     @Override
