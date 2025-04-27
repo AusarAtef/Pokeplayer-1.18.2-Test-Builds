@@ -1,5 +1,8 @@
 package pokecube.core.entity.genetics;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -54,6 +57,8 @@ import thut.core.common.genetics.DefaultGenetics;
 
 public class GeneticsManager
 {
+    private static final Logger LOGGER = LogManager.getLogger("PokemobGenesDebug");
+
     public static class GeneticsProvider implements ICapabilityProvider, INBTSerializable<CompoundTag>
     {
         public final IMobGenetics wrapped = new DefaultGenetics();
@@ -234,14 +239,23 @@ public class GeneticsManager
 
     public static void initMob(final Entity mob)
     {
-        // We only apply to living entities
         if (!(mob instanceof LivingEntity living)) return;
         IMobGenetics genes = ThutCaps.getGenetics(living);
-        // And only ones with genes
-        if (genes == null) return;
-        // Now apply the genes
+        if (genes == null) {
+            LOGGER.warn("IMobGenetics not found for entity: {}", living);
+            return;
+        }
+        LOGGER.info("Initializing mob genetics for entity: {}", living);
+        GENE_PROVIDERS.forEach(p -> {
+            try {
+                p.accept(living);
+                LOGGER.debug("GENE_PROVIDER executed successfully for entity: {}", living);
+            } catch (Exception e) {
+                LOGGER.error("Error while applying GENE_PROVIDER for entity: {}", living, e);
+            }
+        });
+    }
         GENE_PROVIDERS.forEach(p -> p.accept(living));
-        // If we are server side, and added to world, update clients.
         if (!living.level.isClientSide() && living.isAddedToWorld())
             genes.getAlleles().forEach((key, alleles) -> PacketSyncGene.syncGeneToTracking(living, alleles));
     }
