@@ -115,7 +115,10 @@ public abstract class PokemobGenes extends PokemobSided implements IMobColourabl
 
     private void initGenes()
     {
-        if (this.getGenes() == null) throw new RuntimeException("This should not be called here");
+        if (this.getGenes() == null) {
+            PokecubeAPI.LOGGER.error("Cannot initialize genes: getGenes() returned null for entity " + this.entity);
+            throw new RuntimeException("This should not be called here");
+        }
 
         this.genesSpecies = this.getGenes().getAlleles(GeneticsManager.SPECIESGENE);
         this.genesShiny = this.getGenes().getAlleles(GeneticsManager.SHINYGENE);
@@ -130,6 +133,7 @@ public abstract class PokemobGenes extends PokemobSided implements IMobColourabl
         // Species gene
         if (this.genesSpecies == null)
         {
+            PokecubeAPI.LOGGER.error("genesSpecies is null after initGenes for entity: " + this.entity);
             this.genesSpecies = new Alleles<>(this.getGenes());
             this.getGenes().getAlleles().put(GeneticsManager.SPECIESGENE, this.genesSpecies);
         }
