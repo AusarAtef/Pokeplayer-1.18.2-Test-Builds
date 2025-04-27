@@ -134,8 +134,41 @@ import thut.core.common.world.mobs.data.DataSync_Impl;
 import thut.lib.RegHelper;
 import thut.lib.TComponent;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class EventsHandler
 {
+    private static final Logger LOGGER = LogManager.getLogger("PokemobGenesDebug");
+
+    private static void onEntityCaps(final AttachCapabilitiesEvent<Entity> event) {
+        if (!(event.getObject() instanceof LivingEntity living)) return;
+
+        IMobGenetics _genes = null;
+
+        if (event.getCapabilities().containsKey(GeneticsManager.POKECUBEGENETICS)) {
+            _genes = event.getCapabilities()
+                    .get(GeneticsManager.POKECUBEGENETICS)
+                    .getCapability(ThutCaps.GENETICS_CAP)
+                    .orElse(null);
+            if (_genes == null) {
+                LOGGER.error("Genes capability is null but registered for entity: {}", living);
+                throw new IllegalStateException("Genes null yet registered?");
+            }
+        } else {
+            LOGGER.debug("Attaching GeneticsProvider to entity: {}", living);
+            final GeneticsProvider genes = new GeneticsProvider();
+            _genes = genes.wrapped;
+            event.addCapability(GeneticsManager.POKECUBEGENETICS, genes);
+        }
+
+        if (_genes != null) {
+            LOGGER.info("IMobGenetics attached successfully to entity: {}", living);
+        } else {
+            LOGGER.warn("Failed to attach IMobGenetics to entity: {}", living);
+        }
+    }
+
     public static class ChooseFirst
     {
         final Player player;
