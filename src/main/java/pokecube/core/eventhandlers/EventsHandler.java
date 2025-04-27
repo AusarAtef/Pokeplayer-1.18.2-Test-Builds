@@ -521,7 +521,6 @@ public class EventsHandler
 
     private static void onEntityCaps(final AttachCapabilitiesEvent<Entity> event)
     {
-        if (living.getType().getRegistryName().getNamespace().equals("minecraft")) return;
         if (!(event.getObject() instanceof LivingEntity living)) return;
         if (!event.getCapabilities().containsKey(EventsHandler.AFFECTEDCAP))
         {
