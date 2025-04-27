@@ -117,23 +117,30 @@ public class Compat
     }
 
     private static void onServerStarted(final ServerStartedEvent event)
-    {
-        ServerLevel testLevel = event.getServer().getLevel(Level.OVERWORLD);
-        List<JsonPokedexEntry> entries = new ArrayList<>();
-        ForgeRegistries.ENTITIES.forEach(t -> {
+{
+    ServerLevel testLevel = event.getServer().getLevel(Level.OVERWORLD);
+    List<JsonPokedexEntry> entries = new ArrayList<>();
+    ForgeRegistries.ENTITIES.forEach(t -> {
+        try {
+            ResourceLocation key = RegHelper.getKey(t);
+            PokecubeAPI.LOGGER.info("Attempting to create entity: {}", key);
             Entity e = t.create(testLevel);
             if (e instanceof Mob && makePokemob.test(t))
             {
                 @SuppressWarnings("unchecked")
                 final EntityType<? extends Mob> mobType = (EntityType<? extends Mob>) t;
-                final String name = RegHelper.getKey(mobType).toString().replace(":", "_");
+                final String name = key.toString().replace(":", "_");
                 PokedexEntry newDerp = Database.getEntry(name);
+                PokecubeAPI.LOGGER.info("Processed entity: {}, PokedexEntry: {}", key, newDerp != null ? newDerp.getName() : "null");
                 if (newDerp != null && !newDerp.stock && generated.contains(newDerp))
                 {
                     entries.add(JsonPokedexEntry.fromPokedexEntry(newDerp));
                 }
             }
-        });
+        } catch (Exception ex) {
+            PokecubeAPI.LOGGER.error("Error processing entity type: {}", RegHelper.getKey(t), ex);
+        }
+    });
         if (!entries.isEmpty())
         {
             File root = FMLPaths.CONFIGDIR.get().resolve(PokecubeCore.MODID).resolve("datapacks")
