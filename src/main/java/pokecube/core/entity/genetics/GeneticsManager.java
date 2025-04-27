@@ -52,8 +52,33 @@ import thut.api.item.ItemList;
 import thut.core.common.ThutCore;
 import thut.core.common.genetics.DefaultGenetics;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class GeneticsManager
 {
+    private static final Logger LOGGER = LogManager.getLogger("PokemobGenesDebug");
+
+    public static void initMob(final Entity mob) {
+        if (!(mob instanceof LivingEntity living)) return;
+
+        IMobGenetics genes = ThutCaps.getGenetics(living);
+        if (genes == null) {
+            LOGGER.warn("IMobGenetics not found for entity: {}", living);
+            return;
+        }
+
+        LOGGER.info("Initializing mob genetics for entity: {}", living);
+        GENE_PROVIDERS.forEach(p -> {
+            try {
+                p.accept(living);
+                LOGGER.debug("GENE_PROVIDER executed successfully for entity: {}", living);
+            } catch (Exception e) {
+                LOGGER.error("Error while applying GENE_PROVIDER for entity: {}", living, e);
+            }
+        });
+    }
+
     public static class GeneticsProvider implements ICapabilityProvider, INBTSerializable<CompoundTag>
     {
         public final IMobGenetics wrapped = new DefaultGenetics();
