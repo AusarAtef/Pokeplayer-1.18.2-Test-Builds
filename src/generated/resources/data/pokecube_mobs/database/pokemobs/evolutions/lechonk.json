@@ -5,7 +5,7 @@
 	"condition": [
 		{
 	    "key": "level",
-		"level": 18,
+		"level": 18
 		},
 		{
         "key": "sexe",
@@ -19,7 +19,7 @@
 	"condition": [
 		{
 	    "key": "level",
-		"level": 18,
+		"level": 18
 		},
 		{
         "key": "sexe",
