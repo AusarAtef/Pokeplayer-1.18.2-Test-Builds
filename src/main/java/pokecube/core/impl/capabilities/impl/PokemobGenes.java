@@ -36,36 +36,8 @@ import thut.api.entity.genetics.Alleles;
 import thut.api.entity.genetics.Gene;
 import thut.core.common.ThutCore;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 public abstract class PokemobGenes extends PokemobSided implements IMobColourable, Consumer<Gene<?>>
 {
-    private static final Logger LOGGER = LogManager.getLogger("PokemobGenesDebug");
-
-    private void initGenes() {
-        if (this.getGenes() == null) {
-            LOGGER.error("IMobGenetics is null in initGenes for entity: {}", this.getEntity());
-            throw new RuntimeException("This should not be called here");
-        }
-
-        LOGGER.info("Initializing genes for entity: {}", this.getEntity());
-        this.genesSpecies = this.getGenes().getAlleles(GeneticsManager.SPECIESGENE);
-
-        if (this.genesSpecies == null) {
-            LOGGER.warn("genesSpecies is null for entity: {}, initializing...", this.getEntity());
-            this.genesSpecies = new Alleles<>(this.getGenes());
-            this.getGenes().getAlleles().put(GeneticsManager.SPECIESGENE, this.genesSpecies);
-        }
-
-        // Additional initialization logic...
-        if (this.genesSpecies.getExpressed() == null) {
-            LOGGER.error("genesSpecies expressed gene is null after initialization for entity: {}", this.getEntity());
-        } else {
-            LOGGER.debug("genesSpecies expressed gene initialized successfully for entity: {}", this.getEntity());
-        }
-    }
-
     public static Consumer<LivingEntity> GENE_PROVIDER = living -> {
         IPokemob pokemob = PokemobCaps.getPokemobFor(living);
         if (!(pokemob instanceof PokemobGenes hasGenes)) return;
