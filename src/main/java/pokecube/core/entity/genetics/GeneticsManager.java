@@ -185,6 +185,12 @@ public class GeneticsManager
         DEFAULT_GENES.put(SIZEGENE, SizeGene::new);
         DEFAULT_GENES.put(COLOURGENE, ColourGene::new);
         DEFAULT_GENES.put(NATUREGENE, NatureGene::new);
+        DEFAULT_GENES.put(SIZEGENE, AbilityGene::new);
+        DEFAULT_GENES.put(COLOURGENE, MovesGene::new);
+        DEFAULT_GENES.put(NATUREGENE, ShinyGene::new);
+        DEFAULT_GENES.put(SIZEGENE, EVsGene::new);
+        DEFAULT_GENES.put(COLOURGENE, IVsGene::new);
+        DEFAULT_GENES.put(NATUREGENE, SpeciesGene::new);
 
         registerGeneProvider((living) -> {
 
